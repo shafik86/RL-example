@@ -1,11 +1,10 @@
 // Product data
 const products = {
-    'RL PHERO GIRL': { name: 'RL PHERO GIRL', price: 74.25 },
-    'RL PHERO BOY': { name: 'RL PHERO BOY', price: 74.25 },
-    'RL PHERO BOY 2': { name: 'RL PHERO BOY 2', price: 83.85 },
-    'RL PHERO BOY SPECIAL': { name: 'RL PHERO BOY SPECIAL', price: 83.85 },
-    'RL PHERO GIRL DELUXE': { name: 'RL PHERO GIRL DELUXE', price: 83.85 },
-    'RL PHERO COUPLE BUNDLE': { name: 'RL PHERO COUPLE BUNDLE', price: 129.35 }
+    'RL PHERO WOMEN': { name: 'RL PHERO WOMEN', price: 80.00 },
+    'RL PHERO COUPLE': { name: 'RL PHERO COUPLE', price: 150.00 },
+    'RL PHERO GENTLEMEN': { name: 'RL PHERO GENTLEMEN', price: 80.00 },
+    'RL PHERO MEN': { name: 'RL PHERO MEN', price: 80.00 },
+    'RL PHERO LADIES': { name: 'RL PHERO LADIES', price: 80.00 }
 };
 
 let selectedProduct = null;
@@ -30,13 +29,24 @@ function selectProduct(productName, price) {
 // Update order summary
 function updateOrderSummary() {
     const quantity = parseInt(document.getElementById('quantity').value) || 1;
-    const totalPrice = selectedPrice * quantity;
+    const subtotal = selectedPrice * quantity;
+    
+    // Apply 10% discount for 2 or more items
+    let discount = 0;
+    let totalPrice = subtotal;
+    
+    if (quantity >= 2) {
+        discount = subtotal * 0.10;
+        totalPrice = subtotal - discount;
+    }
     
     const summaryHTML = `
         <div class="summary-item">
             <p><strong>Produk:</strong> ${selectedProduct}</p>
             <p><strong>Harga Unit:</strong> RM ${selectedPrice.toFixed(2)}</p>
             <p><strong>Kuantiti:</strong> ${quantity}</p>
+            <p><strong>Subtotal:</strong> RM ${subtotal.toFixed(2)}</p>
+            ${quantity >= 2 ? `<p style="color: #4caf50;"><strong>Diskon 10%:</strong> -RM ${discount.toFixed(2)}</p>` : ''}
         </div>
         <div class="summary-total">
             Jumlah: RM ${totalPrice.toFixed(2)}
@@ -86,9 +96,21 @@ function submitOrder(event) {
     }
     
     // Get form data
+    const quantity = parseInt(document.getElementById('quantity').value);
+    const subtotal = selectedPrice * quantity;
+    
+    // Calculate discount
+    let discount = 0;
+    let totalPrice = subtotal;
+    
+    if (quantity >= 2) {
+        discount = subtotal * 0.10;
+        totalPrice = subtotal - discount;
+    }
+    
     const formData = {
         product: document.getElementById('productName').value,
-        quantity: document.getElementById('quantity').value,
+        quantity: quantity,
         size: document.getElementById('size').value,
         fullName: document.getElementById('fullName').value,
         phone: document.getElementById('phone').value,
@@ -99,7 +121,9 @@ function submitOrder(event) {
         state: document.getElementById('state').value,
         payment: document.getElementById('payment').value,
         notes: document.getElementById('notes').value,
-        totalPrice: selectedPrice * parseInt(document.getElementById('quantity').value)
+        subtotal: subtotal,
+        discount: discount,
+        totalPrice: totalPrice
     };
     
     // Validate all required fields
@@ -145,6 +169,9 @@ function showSuccessAlert(formData) {
 Produk: ${formData.product}
 Ukuran: ${formData.size}
 Kuantiti: ${formData.quantity}
+Harga Unit: RM ${selectedPrice.toFixed(2)}
+Subtotal: RM ${formData.subtotal.toFixed(2)}
+${formData.discount > 0 ? `Diskon 10%: -RM ${formData.discount.toFixed(2)}` : ''}
 Jumlah Harga: RM ${formData.totalPrice.toFixed(2)}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
