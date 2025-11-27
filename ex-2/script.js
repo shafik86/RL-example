@@ -31,12 +31,21 @@ function updateOrderSummary() {
     const quantity = parseInt(document.getElementById('quantity').value) || 1;
     const subtotal = selectedPrice * quantity;
     
-    // Apply 10% discount for 2 or more items
+    // Calculate discount based on quantity
+    let discountPercentage = 0;
     let discount = 0;
     let totalPrice = subtotal;
     
-    if (quantity >= 2) {
-        discount = subtotal * 0.10;
+    if (quantity === 1) {
+        discountPercentage = 20;
+    } else if (quantity >= 2 && quantity <= 5) {
+        discountPercentage = 30;
+    } else if (quantity > 5) {
+        discountPercentage = 40;
+    }
+    
+    if (discountPercentage > 0) {
+        discount = subtotal * (discountPercentage / 100);
         totalPrice = subtotal - discount;
     }
     
@@ -46,7 +55,7 @@ function updateOrderSummary() {
             <p><strong>Harga Unit:</strong> RM ${selectedPrice.toFixed(2)}</p>
             <p><strong>Kuantiti:</strong> ${quantity}</p>
             <p><strong>Subtotal:</strong> RM ${subtotal.toFixed(2)}</p>
-            ${quantity >= 2 ? `<p style="color: #4caf50;"><strong>Diskon 10%:</strong> -RM ${discount.toFixed(2)}</p>` : ''}
+            ${discountPercentage > 0 ? `<p style="color: #4caf50;"><strong>Diskon ${discountPercentage}%:</strong> -RM ${discount.toFixed(2)}</p>` : ''}
         </div>
         <div class="summary-total">
             Jumlah: RM ${totalPrice.toFixed(2)}
@@ -99,12 +108,21 @@ function submitOrder(event) {
     const quantity = parseInt(document.getElementById('quantity').value);
     const subtotal = selectedPrice * quantity;
     
-    // Calculate discount
+    // Calculate discount based on quantity
+    let discountPercentage = 0;
     let discount = 0;
     let totalPrice = subtotal;
     
-    if (quantity >= 2) {
-        discount = subtotal * 0.10;
+    if (quantity === 1) {
+        discountPercentage = 20;
+    } else if (quantity >= 2 && quantity <= 5) {
+        discountPercentage = 30;
+    } else if (quantity > 5) {
+        discountPercentage = 40;
+    }
+    
+    if (discountPercentage > 0) {
+        discount = subtotal * (discountPercentage / 100);
         totalPrice = subtotal - discount;
     }
     
@@ -122,6 +140,7 @@ function submitOrder(event) {
         payment: document.getElementById('payment').value,
         notes: document.getElementById('notes').value,
         subtotal: subtotal,
+        discountPercentage: discountPercentage,
         discount: discount,
         totalPrice: totalPrice
     };
@@ -171,7 +190,7 @@ Ukuran: ${formData.size}
 Kuantiti: ${formData.quantity}
 Harga Unit: RM ${selectedPrice.toFixed(2)}
 Subtotal: RM ${formData.subtotal.toFixed(2)}
-${formData.discount > 0 ? `Diskon 10%: -RM ${formData.discount.toFixed(2)}` : ''}
+${formData.discountPercentage > 0 ? `Diskon ${formData.discountPercentage}%: -RM ${formData.discount.toFixed(2)}` : ''}
 Jumlah Harga: RM ${formData.totalPrice.toFixed(2)}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
