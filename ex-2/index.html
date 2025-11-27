@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RL Phero - Pheromone Perfume</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">RL PHERO</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#promo">Promosi</a></li>
+                <li><a href="#products">Produk</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#order">Order</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section dengan Video -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>RL PHERO</h1>
+            <p class="tagline">Pheromone Perfume Premium yang Mengubah Kepercayaan Diri Anda</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">Jelajahi Koleksi</button>
+                <button class="btn btn-secondary-light" onclick="document.getElementById('faq').scrollIntoView({behavior: 'smooth'})">Pelajari Lebih Lanjut</button>
+            </div>
+            <div class="promo-banner">
+                <p>⚡ PERHATIAN! Skrol ke bawah untuk mendapat DISKAUN hingga 50% + FREE GIFT</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-us">
+        <div class="container">
+            <h2>Kenapa Pilih RL PHERO?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🧪</div>
+                    <h3>Formula Premium</h3>
+                    <p>Pheromone berkualitas tinggi dengan formula eksklusif untuk hasil maksimal</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⏱️</div>
+                    <h3>Tahan 8-12 Jam</h3>
+                    <p>Aroma yang tahan lama sepanjang hari dengan performa terbaik</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎁</div>
+                    <h3>Free Gifts</h3>
+                    <p>Setiap pembelian dapat hadiah menarik senilai ratusan ribu</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Penghantaran Cepat</h3>
+                    <p>Pengiriman cepat ke seluruh Malaysia dengan packaging premium</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>COD Tersedia</h3>
+                    <p>Bayar selepas barang sampai - tiada risiko untuk anda</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✅</div>
+                    <h3>Jaminan Original</h3>
+                    <p>100% Produk Original dengan sertifikat keaslian</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Banner Section -->
+    <section id="promo" class="promo-section">
+        <div class="container">
+            <div class="promo-content">
+                <h2>PROMOSI SPESIAL BULAN INI!</h2>
+                <div class="promo-grid">
+                    <div class="promo-card">
+                        <div class="discount-badge">HEMAT 25%</div>
+                        <h3>Beli 1 Botol</h3>
+                        <p class="promo-price">Dari RM 99 sekarang RM 74.25</p>
+                        <p class="promo-desc">+ Free Premium Gift Box</p>
+                    </div>
+                    <div class="promo-card featured">
+                        <div class="discount-badge">HEMAT 35%</div>
+                        <h3>Beli 2 Botol (Bundle)</h3>
+                        <p class="promo-price">Dari RM 198 sekarang RM 128.70</p>
+                        <p class="promo-desc">+ Free 2 Gift Items + Free Shipping</p>
+                    </div>
+                    <div class="promo-card">
+                        <div class="discount-badge">HEMAT 50%</div>
+                        <h3>Paket Hemat 4 Botol</h3>
+                        <p class="promo-price">Dari RM 396 sekarang RM 198</p>
+                        <p class="promo-desc">+ Free 4 Gift Items + Free Shipping</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">Koleksi Terlengkap Kami</h2>
+            
+            <div class="products-grid">
+                <!-- RL Girl -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../images/RL-girl-1.jpg" alt="RL Phero Girl">
+                        <span class="product-badge">Popular</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>RL PHERO GIRL</h3>
+                        <p class="description">Aroma wangi yang mempesona dan percaya diri. Dirancang khusus untuk wanita modern yang berani tampil beda.</p>
+                        <div class="product-features">
+                            <span>✓ Tahan 8-12 Jam</span>
+                            <span>✓ Premium Formula</span>
+                            <span>✓ Pheromone Enhanced</span>
+                        </div>
+                        <div class="pricing">
+                            <p class="original-price">RM 99</p>
+                            <p class="sale-price">RM 74.25</p>
+                        </div>
+                        <button class="btn btn-secondary" onclick="selectProduct('RL PHERO GIRL', 74.25)">Pilih Sekarang</button>
+                    </div>
+                </div>
+
+                <!-- RL Boy -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../images/RL-girl-boy.jpg" alt="RL Phero Boy">
+                        <span class="product-badge">Bestseller</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>RL PHERO BOY</h3>
+                        <p class="description">Maskulin dan memperdayakan. Aroma yang meninggalkan kesan mendalam dengan sentuhan eksklusif.</p>
+                        <div class="product-features">
+                            <span>✓ Tahan 8-12 Jam</span>
+                            <span>✓ Premium Formula</span>
+                            <span>✓ Pheromone Enhanced</span>
+                        </div>
+                        <div class="pricing">
+                            <p class="original-price">RM 99</p>
+                            <p class="sale-price">RM 74.25</p>
+                        </div>
+                        <button class="btn btn-secondary" onclick="selectProduct('RL PHERO BOY', 74.25)">Pilih Sekarang</button>
+                    </div>
+                </div>
+
+                <!-- RL Boy 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../images/RL-boy-2.jpg" alt="RL Phero Boy 2">
+                        <span class="product-badge">Premium</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>RL PHERO BOY 2</h3>
+                        <p class="description">Varian terbaru dengan formula yang lebih kuat dan tahan lama untuk lelaki yang percaya diri.</p>
+                        <div class="product-features">
+                            <span>✓ Tahan 8-12 Jam</span>
+                            <span>✓ Premium Formula</span>
+                            <span>✓ Pheromone Enhanced</span>
+                        </div>
+                        <div class="pricing">
+                            <p class="original-price">RM 129</p>
+                            <p class="sale-price">RM 83.85</p>
+                        </div>
+                        <button class="btn btn-secondary" onclick="selectProduct('RL PHERO BOY 2', 83.85)">Pilih Sekarang</button>
+                    </div>
+                </div>
+
+                <!-- RL Boy 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../images/RL-boy-1.jpg" alt="RL Phero Boy 1">
+                        <span class="product-badge">Eksklusif</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>RL PHERO BOY SPECIAL</h3>
+                        <p class="description">Edisi spesial dengan kemasan eksklusif dan aroma premium yang tak terlupakan.</p>
+                        <div class="product-features">
+                            <span>✓ Tahan 8-12 Jam</span>
+                            <span>✓ Premium Formula</span>
+                            <span>✓ Pheromone Enhanced</span>
+                        </div>
+                        <div class="pricing">
+                            <p class="original-price">RM 129</p>
+                            <p class="sale-price">RM 83.85</p>
+                        </div>
+                        <button class="btn btn-secondary" onclick="selectProduct('RL PHERO BOY SPECIAL', 83.85)">Pilih Sekarang</button>
+                    </div>
+                </div>
+
+                <!-- RL Girl 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../images/RL-girl-2.jpg" alt="RL Phero Girl 2">
+                        <span class="product-badge">Luxury</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>RL PHERO GIRL DELUXE</h3>
+                        <p class="description">Koleksi mewah untuk wanita yang menghargai kualitas terbaik dengan aroma yang elegan.</p>
+                        <div class="product-features">
+                            <span>✓ Tahan 8-12 Jam</span>
+                            <span>✓ Premium Formula</span>
+                            <span>✓ Pheromone Enhanced</span>
+                        </div>
+                        <div class="pricing">
+                            <p class="original-price">RM 129</p>
+                            <p class="sale-price">RM 83.85</p>
+                        </div>
+                        <button class="btn btn-secondary" onclick="selectProduct('RL PHERO GIRL DELUXE', 83.85)">Pilih Sekarang</button>
+                    </div>
+                </div>
+
+                <!-- Bundle -->
+                <div class="product-card featured">
+                    <div class="product-image">
+                        <img src="../images/RL-girl-boy-2.jpg" alt="RL Phero Bundle">
+                        <span class="product-badge">BEST DEAL</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>RL PHERO COUPLE BUNDLE</h3>
+                        <p class="description">Paket romantis untuk pasangan - Girl + Boy dalam satu set istimewa dengan harga spesial.</p>
+                        <div class="product-features">
+                            <span>✓ Paket Hemat</span>
+                            <span>✓ Untuk Pasangan</span>
+                            <span>✓ Limited Edition</span>
+                        </div>
+                        <div class="pricing">
+                            <p class="original-price">RM 199</p>
+                            <p class="sale-price">RM 129.35</p>
+                        </div>
+                        <button class="btn btn-secondary" onclick="selectProduct('RL PHERO COUPLE BUNDLE', 129.35)">Pilih Sekarang</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Testimoni Pelanggan</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="review">"Produk yang luar biasa! Aroma tahan lama dan packaging yang cantik. Saya recommend ke semua kawan saya!"</p>
+                    <p class="reviewer">- Sarah M., Kuala Lumpur</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="review">"COD sangat memudahkan. Kualitas produk bagus, aroma yang unik dan mempesona. Definitely repeat order!"</p>
+                    <p class="reviewer">- Ahmad R., Selangor</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="review">"Cantik produknya, aroma premium, dan free gift yang diberikan sangat berguna. Worth it!"</p>
+                    <p class="reviewer">- Lisa K., Penang</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="review">"Pengiriman cepat, pelayanan ramah, produk original. Ini yang saya cari selama ini!"</p>
+                    <p class="reviewer">- Fazrul T., Johor</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title">Soalan Lazim</h2>
+            <div class="faq-content">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Berapa ML isi dalam satu botol RL PHERO?</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Satu botol RL PHERO berisi 30ml (1.01fl.oz) - ukuran yang pas untuk penggunaan personal dan mudah dibawa kemana-mana.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Berapa jam ketahanan aroma RL PHERO?</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>RL PHERO menggunakan pati premium sehingga aroma boleh tahan 8 hingga 12 jam. Sangat long lasting dan tahan sepanjang hari!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Ciri-ciri bau RL PHERO seperti apa?</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Bau seakan Raudah di Madinah untuk lelaki - sangat eksklusif dan mewah. Manakala untuk perempuan, bau oud yang lembut dengan sentuhan rose. Kedua-duanya terinspirasi dari wangian Timur Tengah yang premium.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Boleh COD (Cash On Delivery)?</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ya! Kami menyediakan COD untuk kemudahan anda. Tunggu barang sampai baru bayar - tanpa risiko dan aman untuk transaksi anda.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Adakah free gift apabila beli RL PHERO?</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ya! Kami menyediakan pelbagai free gift menarik untuk setiap pembelian. Semakin banyak beli, semakin banyak hadiah yang anda dapat. Hadiah akan dipilih berdasarkan ketersediaan stock.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Berapa lama masa penghantaran?</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Kami menghantar dalam 1-3 hari kerja ke seluruh Malaysia. Setelah barang dihantar, anda akan menerima tracking number untuk memantau status pengiriman.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Produk ni 100% Original?</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>100% Produk Original dengan sertifikat keaslian. Kami jamin kualitas dan keaslian setiap produk yang kami jual. Jika ada masalah, kami akan bertanggung jawab penuh.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Jangan Lewatkan Promosi Spesial Ini!</h2>
+            <p>Diskaun hingga 50% + Free Gift untuk pembelian hari ini</p>
+            <button class="btn btn-primary btn-large" onclick="document.getElementById('order').scrollIntoView({behavior: 'smooth'})">Pesan Sekarang</button>
+        </div>
+    </section>
+
+    <!-- Order Section -->
+    <section id="order" class="order-section">
+        <div class="container">
+            <h2 class="section-title">Pesan Sekarang</h2>
+            
+            <div class="order-container">
+                <div class="order-summary">
+                    <h3>Ringkasan Pesanan</h3>
+                    <div id="orderSummary" class="summary-content">
+                        <p style="color: #999; text-align: center;">Pilih produk untuk memulai</p>
+                    </div>
+                </div>
+
+                <div class="order-form">
+                    <form id="orderForm" onsubmit="submitOrder(event)">
+                        <div class="form-group">
+                            <label for="productName">Produk *</label>
+                            <input type="text" id="productName" name="productName" readonly placeholder="Pilih produk dari atas">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="quantity">Kuantiti *</label>
+                                <input type="number" id="quantity" name="quantity" min="1" value="1">
+                            </div>
+                            <div class="form-group">
+                                <label for="size">Pilihan *</label>
+                                <select id="size" name="size" required>
+                                    <option value="">-- Pilih Ukuran --</option>
+                                    <option value="30ml">30ml (Standard)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fullName">Nama Lengkap *</label>
+                            <input type="text" id="fullName" name="fullName" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">No. Telefon *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Alamat Penghantaran *</label>
+                            <textarea id="address" name="address" rows="3" required></textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">Bandar/Kota *</label>
+                                <input type="text" id="city" name="city" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="postcode">Kod Pos *</label>
+                                <input type="text" id="postcode" name="postcode" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="state">Negeri *</label>
+                            <select id="state" name="state" required>
+                                <option value="">-- Pilih Negeri --</option>
+                                <option value="Johor">Johor</option>
+                                <option value="Kedah">Kedah</option>
+                                <option value="Kelantan">Kelantan</option>
+                                <option value="Kuala Lumpur">Kuala Lumpur</option>
+                                <option value="Labuan">Labuan</option>
+                                <option value="Melaka">Melaka</option>
+                                <option value="Negeri Sembilan">Negeri Sembilan</option>
+                                <option value="Pahang">Pahang</option>
+                                <option value="Penang">Penang</option>
+                                <option value="Perak">Perak</option>
+                                <option value="Perlis">Perlis</option>
+                                <option value="Putrajaya">Putrajaya</option>
+                                <option value="Sabah">Sabah</option>
+                                <option value="Sarawak">Sarawak</option>
+                                <option value="Selangor">Selangor</option>
+                                <option value="Terengganu">Terengganu</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="payment">Kaedah Pembayaran *</label>
+                            <select id="payment" name="payment" required>
+                                <option value="">-- Pilih Kaedah --</option>
+                                <option value="COD">COD (Bayar Semasa Tiba)</option>
+                                <option value="Bank Transfer">Bank Transfer</option>
+                                <option value="Online Banking">Online Banking</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="notes">Catatan Tambahan</label>
+                            <textarea id="notes" name="notes" rows="2" placeholder="Contoh: Instruksi penghantaran khusus"></textarea>
+                        </div>
+
+                        <div class="order-total">
+                            <p>Total Harga: <span id="totalPrice">RM 0</span></p>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">Hantar Pesanan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <h2 class="section-title">Hubungi Kami</h2>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>📱 Telefon</h3>
+                    <p>+60 17-4511455</p>
+                </div>
+                <div class="contact-item">
+                    <h3>📧 Email</h3>
+                    <p>rlphero@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                    <h3>📍 Lokasi</h3>
+                    <p>Kota Bharu, Kelantan, Malaysia</p>
+                </div>
+                <div class="contact-item">
+                    <h3>💬 WhatsApp</h3>
+                    <p><a href="https://wa.me/+60176787932" target="_blank">Chat Kami</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>RL PHERO</h4>
+                    <p>Pheromone Perfume Premium untuk kepercayaan diri anda</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="#products">Produk</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#order">Order</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Pembayaran</h4>
+                    <p>✓ COD<br>✓ Bank Transfer<br>✓ Online Banking</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 RL PHERO. Semua hak terpelihara.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

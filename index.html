@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RL Phero Landing Pages - Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #d4af37;
+            --dark-color: #1a1a1a;
+            --light-color: #f5f5f5;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            color: white;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #ccc;
+        }
+
+        .demos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+
+        .demo-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid var(--primary-color);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+        }
+
+        .demo-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(212, 175, 55, 0.3);
+            border-color: #e5c158;
+        }
+
+        .demo-thumb {
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+            background: #333;
+        }
+
+        .demo-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .demo-card:hover .demo-thumb img {
+            transform: scale(1.05);
+        }
+
+        .demo-info {
+            padding: 2.5rem;
+        }
+
+        .demo-title {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .demo-type {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--primary-color);
+        }
+
+        .demo-description {
+            color: #bbb;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .demo-features {
+            margin-bottom: 1.5rem;
+        }
+
+        .demo-features h4 {
+            color: #ddd;
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .demo-features ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .demo-features li {
+            background: rgba(212, 175, 55, 0.1);
+            color: #ddd;
+            padding: 0.4rem 0.8rem;
+            border-radius: 5px;
+            font-size: 0.85rem;
+        }
+
+        .demo-cta {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            text-align: center;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: var(--dark-color);
+        }
+
+        .btn-primary:hover {
+            background: #e5c158;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(212, 175, 55, 0.3);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            color: #999;
+        }
+
+        .footer-note {
+            margin-top: 20px;
+            background: rgba(212, 175, 55, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            color: #bbb;
+        }
+
+        .footer-note strong {
+            color: var(--primary-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .demos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .demo-info {
+                padding: 2rem;
+            }
+
+            .demo-title {
+                font-size: 1.5rem;
+            }
+
+            .demo-cta {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 15px;
+            }
+
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            header p {
+                font-size: 0.95rem;
+            }
+
+            .demo-thumb {
+                height: 200px;
+            }
+
+            .demo-info {
+                padding: 1.5rem;
+            }
+
+            .demo-title {
+                font-size: 1.2rem;
+            }
+
+            .demo-description {
+                font-size: 0.9rem;
+            }
+
+            .btn {
+                padding: 10px 15px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>RL PHERO SIGNATURE</h1>
+            <p>🌹 Pilih Design Landing Page Yang Anda Sukai</p>
+        </header>
+
+        <div class="demos-grid">
+            <!-- EX-1: Basic Product Page -->
+            <div class="demo-card">
+                <div class="demo-thumb">
+                    <img src="images/thumb/thumb-ex-1.png" alt="EX-1 Demo">
+                </div>
+                <div class="demo-info">
+                    <div class="demo-type">Basic Product Page</div>
+                    <h2 class="demo-title">EX-1 Design</h2>
+                    <p class="demo-description">
+                        Layout sederhana dengan fokus pada produk. Navigation atas, product showcase, order form yang straightforward.
+                    </p>
+                    <div class="demo-features">
+                        <h4>Features:</h4>
+                        <ul>
+                            <li>✓ Product Grid</li>
+                            <li>✓ Simple Form</li>
+                            <li>✓ FAQ Section</li>
+                            <li>✓ Contact Info</li>
+                        </ul>
+                    </div>
+                    <div class="demo-cta">
+                        <a href="ex-1/index.html" class="btn btn-primary" target="_blank">Lihat Demo</a>
+                        <a href="https://wa.me/60174511455?text=Feedback%20Example-1:%0A%0A🎨%20Design%20Feedback:%0A-%20Saya%20suka:%20[tuliskan%20apa%20yang%20anda%20suka]%0A-%20Kurang:%20[tuliskan%20apa%20yang%20perlu%20ditambah]%0A%0A📝%20Perubahan%20yang%20diinginkan:%0A1.%20[Perubahan%201]%0A2.%20[Perubahan%202]%0A3.%20[Perubahan%203]" class="btn btn-secondary" target="_blank">📝 Feedback</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EX-2: Enhanced Page -->
+            <div class="demo-card">
+                <div class="demo-thumb">
+                    <img src="images/thumb/thumb-ex-2.png" alt="EX-2 Demo">
+                </div>
+                <div class="demo-info">
+                    <div class="demo-type">Enhanced Features</div>
+                    <h2 class="demo-title">EX-2 Design</h2>
+                    <p class="demo-description">
+                        Lebih lengkap dengan sections tambahan: Why Us, Promo, Testimonials, Trust indicators, dan detailed CTAs.
+                    </p>
+                    <div class="demo-features">
+                        <h4>Features:</h4>
+                        <ul>
+                            <li>✓ Why Us Section</li>
+                            <li>✓ Promo Banner</li>
+                            <li>✓ Testimonials</li>
+                            <li>✓ Trust Badges</li>
+                        </ul>
+                    </div>
+                    <div class="demo-cta">
+                        <a href="ex-2/index.html" class="btn btn-primary" target="_blank">Lihat Demo</a>
+                        <a href="https://wa.me/60174511455?text=Feedback%20Example-2:%0A%0A🎨%20Design%20Feedback:%0A-%20Saya%20suka:%20[tuliskan%20apa%20yang%20anda%20suka]%0A-%20Kurang:%20[tuliskan%20apa%20yang%20perlu%20ditambah]%0A%0A📝%20Perubahan%20yang%20diinginkan:%0A1.%20[Perubahan%201]%0A2.%20[Perubahan%202]%0A3.%20[Perubahan%203]" class="btn btn-secondary" target="_blank">📝 Feedback</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EX-3: Full Premium Page -->
+            <div class="demo-card">
+                <div class="demo-thumb">
+                    <img src="images/thumb/thumb-ex-3.png" alt="EX-3 Demo">
+                </div>
+                <div class="demo-info">
+                    <div class="demo-type">Premium Full Page</div>
+                    <h2 class="demo-title">EX-3 Design</h2>
+                    <p class="demo-description">
+                        Paling complete dengan hero images, Islamic section (Hadis), Quick order, Real-time summary, animations, dan strong CTAs.
+                    </p>
+                    <div class="demo-features">
+                        <h4>Features:</h4>
+                        <ul>
+                            <li>✓ Hero Section</li>
+                            <li>✓ Hadis Section</li>
+                            <li>✓ Quick Order</li>
+                            <li>✓ Real-time Summary</li>
+                            <li>✓ Animations</li>
+                            <li>✓ Strong CTAs</li>
+                        </ul>
+                    </div>
+                    <div class="demo-cta">
+                        <a href="ex-3-FULL/index.html" class="btn btn-primary" target="_blank">Lihat Demo</a>
+                        <a href="https://wa.me/60174511455?text=Feedback%20Example-3:%0A%0A🎨%20Design%20Feedback:%0A-%20Saya%20suka:%20[tuliskan%20apa%20yang%20anda%20suka]%0A-%20Kurang:%20[tuliskan%20apa%20yang%20perlu%20ditambah]%0A%0A📝%20Perubahan%20yang%20diinginkan:%0A1.%20[Perubahan%201]%0A2.%20[Perubahan%202]%0A3.%20[Perubahan%203]" class="btn btn-secondary" target="_blank">📝 Feedback</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>📧 Silakan lihat ketiga design di atas dan berikan feedback anda</p>
+            <div class="footer-note">
+                <strong>Cara Memberikan Feedback:</strong><br>
+                Klik button "📝 Feedback" untuk langsung buka WhatsApp dengan template feedback. Atau hubungi kami di +60 17-4511455
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // All feedback buttons now link directly to WhatsApp
+    </script>
+</body>
+</html>
